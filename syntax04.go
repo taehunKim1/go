@@ -6,7 +6,7 @@ import (
 	"time"      // seed 생성용 패키지
 )
 
-// 난수 추출된 수의 소수 판정 프로그램v0.4
+// 난수 추출된 수의 소수 판정 프로그램v0.6
 // 소수 : 1과 자기자신외에는 나누어 떨어지지 않는 수 (0과 1은 제외)
 func main() {
 	seed := time.Now().Unix()
@@ -19,6 +19,7 @@ func main() {
 	for i := 2; i < number; i++ {
 		if number%i == 0 {
 			isPrime = false //한번이라도 i로 나눴을떄 나눠진다면 소수가 아니다.
+			break
 		}
 		fmt.Print(i, " ")
 	}
